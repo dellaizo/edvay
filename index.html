@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+<header class="site-header">
+  <nav class="navbar">
+    <div class="logo">Эдвай</div>
+    <ul class="nav-links">
+      <li><a href="#slider">Главная</a></li>
+      <li><a href="#release">Последний релиз</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="slider" id="slider">
+    <div class="slider-track">
+      <div class="slide">
+        <a href="https://example.com/release" target="_blank" rel="noopener noreferrer"><img src="images/1beliy-shum-full.jpg" alt="белый шум" /></a>
+      </div>
+      <div class="slide">
+        <a href="https://example.com/release" target="_blank" rel="noopener noreferrer"><img src="images/2bezumie-full.jpg" alt="безумие" /></a>
+      </div>
+      <div class="slide">
+        <a href="https://example.com/release" target="_blank" rel="noopener noreferrer"><img src="images/3slovo-pacana-full.jpg" alt="слово пацана" /></a>
+      </div>
+      <div class="slide">
+        <a href="https://example.com/release" target="_blank" rel="noopener noreferrer"><img src="images/4merhaba-full.jpg" alt="merhaba" /></a>
+      </div>
+      <div class="slide">
+        <a href="https://example.com/release" target="_blank" rel="noopener noreferrer"><img src="images/5eho-goroda-full.jpg" alt="эхо города" /></a>
+      </div>
+      <div class="slide">
+        <a href="https://example.com/release" target="_blank" rel="noopener noreferrer"><img src="images/6posle-zapyatyh-full.jpg" alt="после запятых" /></a>
+      </div>
+      <div class="slide">
+        <a href="https://example.com/release" target="_blank" rel="noopener noreferrer"><img src="images/7heylala-full.jpg" alt="hey-la-la" /></a>
+      </div>
+    </div>
+
+<button class="slider-arrow prev" aria-label="Предыдущий слайд">
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24">
+    <path stroke="#f5f5f5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19L8 12L15 5"/>
+  </svg>
+</button>
+
+<button class="slider-arrow next" aria-label="Следующий слайд">
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24">
+    <path stroke="#f5f5f5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5L16 12L9 19"/>
+  </svg>
+</button>
+
+    <div class="slider-dots">
+    </div>
+  </section>
+
+     <h2 class="latest-release-title">Последний релиз:</h2>
+
+<section class="latest-release" id="release">
+
+  <video autoplay muted loop playsinline class="release-bg">
+    <source src="./video/teaser-maybach.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+<div class="release-content">
+  <div class="release-cover-wrapper">
+    <img src="./images/0maybach.jpeg" alt="Обложка трека" class="release-cover">
+    <button class="play-button" id="playBtn">&#9658;</button>
+    <audio id="previewAudio" src="./audio/latest-realese.mp3"></audio>
+  </div>
+  
+  <div class="release-info">
+    <h2><a href="https://example.com/release" target="_blank">Эдвай, Ynblako - Maybach</a></h2>
+  </div>
+</div>
+</section>
+  </section>
+
+<script src="slider.js"></script>
+<script src="player.js"></script>
+</body>
+</html>

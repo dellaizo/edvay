@@ -1,0 +1,454 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+/* HEADER START */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.8); /* полупрозрачный тёмный фон */
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  padding: 15px 10vw;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff5c5c;
+}
+
+/* HEADER END */
+
+.slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 70vh;
+  
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  position: relative;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+.slide h2 {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 24px;
+}
+
+/* Стили для стрелок */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: transparent; /* убираем фон */
+  border: none;            /* убираем границу */
+  padding: 0;
+  z-index: 10;
+}
+
+/* Позиционирование кнопок */
+.slider-arrow.prev {
+  left: 10px;
+}
+
+.slider-arrow.next {
+  right: 10px;
+}
+
+/* Убираем псевдоэлементы */
+.slider-arrow.prev::before,
+.slider-arrow.next::before {
+  content: none;
+}
+
+/* SVG стрелки */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: none; /* УБИРАЕМ ФОН */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 0;
+}
+
+/* Позиции кнопок */
+.slider-arrow.prev {
+  left: 10px;
+}
+
+.slider-arrow.next {
+  right: 10px;
+}
+
+/* Стили SVG — увеличены и почти белые */
+.slider-arrow svg {
+  width: 40px;
+  height: 40px;
+  stroke: #f5f5f5;           /* почти белый */
+  stroke-width: 2.5;
+  fill: none;                /* важно! */
+  transition: stroke 0.3s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+.slider-arrow:hover svg {
+  stroke: #ffffff;
+  opacity: 0.8;  
+  transition: 0.7s;         /* чисто белый при наведении */
+}
+
+/* Точки навигации */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #aaa;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider-dots button.active {
+  background: #fff;
+}
+
+
+
+/* Latest release START */
+
+.latest-release-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #f8f8f8ab;
+  margin: 30px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  user-select: none;
+  /* Можно добавить эффект, например, тень или легкий градиент */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.latest-release {
+  display: flex;
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+  padding-inline: 15vw;
+}
+
+
+
+/* Видео на левой половине */
+.latest-release video.release-bg {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%) blur(1px);
+}
+
+/* Правая часть — контент */
+.release-content {
+  flex: 1;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* вертикальное центрирование */
+  align-items: center;     /* горизонтальное центрирование */
+  padding: 40px;
+  text-align: center;
+}
+
+.release-cover {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.release-info h3 {
+  font-size: 16px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.release-info h2 a {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.release-info h2 a:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
+
+
+.release-cover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 32px;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.play-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* latest releae END */
+
+
+/* Планшеты (ширина от 601px до 1024px) */
+@media (max-width: 1024px) {
+  .slide h2 {
+    font-size: 20px;
+    padding: 10px 20px;
+    bottom: 20px;
+  }
+
+  .slider-arrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .slider-arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slider-dots button {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
+
+/* Смартфоны (ширина до 600px) */
+@media (max-width: 600px) {
+  .slider {
+    height: 50vh; /* меньше по высоте */
+  }
+
+  .slide h2 {
+    font-size: 16px;
+    padding: 8px 16px;
+    bottom: 15px;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .slider-arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slider-dots {
+    bottom: 15px;
+    gap: 8px;
+  }
+
+  .slider-dots button {
+    width: 8px;
+    height: 8px;
+  }
+
+  .latest-release-title {
+    font-size: 24px;
+    margin: 40px 0 20px;
+  }
+
+  .latest-release {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .release-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .release-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: none; /* удалили черный фон */
+    backdrop-filter: blur(4px); /* не обязательно, но можно */
+  }
+
+  .release-cover {
+    max-width: 180px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+
+  .release-info h3 {
+    font-size: 16px;
+    color: #eee;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+
+  .release-info h2 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  }
+
+  .listen-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .listen-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 10px 5vw;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+}
