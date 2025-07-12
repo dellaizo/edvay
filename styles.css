@@ -451,4 +451,8 @@ body {
   .nav-links li a {
     font-size: 14px;
   }
+
+  .slider-arrow {
+    display: none;
+}
 }
