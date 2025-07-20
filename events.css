@@ -1,0 +1,61 @@
+.events-section {
+  padding: 60px 15vw;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.events-section h2 {
+  font-size: 28px;
+  color: #f8f8f8ab;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-card {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.event-card:hover {
+  background-color: #222;
+}
+
+.event-card h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.event-card p {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .events-section {
+    padding: 40px 5vw;
+  }
+
+  .event-card {
+    padding: 16px;
+  }
+
+  .event-card h3 {
+    font-size: 18px;
+  }
+
+  .event-card p {
+    font-size: 14px;
+  }
+}

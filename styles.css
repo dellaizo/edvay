@@ -436,8 +436,13 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  .navbar {
+    display: none;
+  }
+
   .site-header {
-    padding: 10px 5vw;
+    display: none;
   }
 
   .logo {
@@ -452,7 +457,7 @@ body {
     font-size: 14px;
   }
 
-  .slider-arrow {
+    .slider-arrow {
     display: none;
 }
 }
